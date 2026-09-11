@@ -3,10 +3,15 @@ import http from 'http';
 const server = http.createServer((req, res) => {
 
     if (req.url === "/") {
-        res.end("<h1>Home Page</h1>");
+        res.write("<h1>Home Page</h1>");
+        res.end(`
+            <a href="/product">Product</a>
+            <a href="/contact">Contact</a>
+
+       ` );
     }
 
-    else if (req.url === "/product") {
+    else if (req.url === "/product page") {
         res.write(`
             <h1>iPhone XL</h1>
             <h1>Price: 87654</h1>
@@ -15,7 +20,7 @@ const server = http.createServer((req, res) => {
         res.end();
     }
 
-    else if (req.url === "/contact") {
+    else if (req.url === "/contact Us") {
         res.end("<h1>Contact Us</h1>");
     }
 
