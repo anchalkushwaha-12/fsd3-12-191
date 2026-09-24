@@ -12,6 +12,7 @@ const server = http.createServer((req, res) => {
       body += chunk;
     });
     req.on("end", () => {
+      
       const user = JSON.parse(body);
       const userCreated = addUser(user);
       res.end(JSON.stringify({ msg: "user added", userCreated }));
