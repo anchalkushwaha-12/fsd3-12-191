@@ -21,6 +21,7 @@ const server = http.createServer((req, res) => {
     const stream = createReadStream("contact.html", { encoding: "utf-8" });
     stream.pipe(res);
   }
+  
    else {
     res.statusCode = 404;
     res.end("Not found");
