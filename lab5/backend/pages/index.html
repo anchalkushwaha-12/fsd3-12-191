@@ -1,0 +1,2849 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>EduNova - Online Coaching Classes</title>
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+          rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        inter: ["Inter", "sans-serif"]
+                    },
+
+                    animation: {
+                        float: "float 4s ease-in-out infinite",
+                        blob: "blob 7s infinite"
+                    },
+
+                    keyframes: {
+
+                        float: {
+                            "0%, 100%": {
+                                transform: "translateY(0)"
+                            },
+
+                            "50%": {
+                                transform: "translateY(-15px)"
+                            }
+                        },
+
+                        blob: {
+                            "0%, 100%": {
+                                transform: "translate(0,0) scale(1)"
+                            },
+
+                            "50%": {
+                                transform: "translate(20px,-20px) scale(1.1)"
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+
+</head>
+
+
+<body class="font-inter bg-slate-50 text-slate-800">
+
+
+<!-- =====================================================
+                    NAVBAR
+===================================================== -->
+
+<header class="fixed top-0 left-0 w-full z-50 px-4 md:px-8 pt-4">
+
+    <nav class="max-w-7xl mx-auto
+                bg-white/85 backdrop-blur-xl
+                border border-white/60
+                shadow-lg shadow-slate-200/50
+                rounded-2xl">
+
+        <div class="px-5 md:px-7 py-4
+                    flex items-center
+                    justify-between">
+
+
+            <!-- LOGO -->
+
+            <a href="#home"
+               class="flex items-center gap-3">
+
+                <div class="w-11 h-11
+                            rounded-xl
+                            bg-gradient-to-br
+                            from-indigo-600
+                            to-violet-600
+                            text-white
+                            flex items-center
+                            justify-center
+                            shadow-lg shadow-indigo-200">
+
+                    <i class="fa-solid fa-graduation-cap text-lg"></i>
+
+                </div>
+
+
+                <span class="text-xl font-extrabold">
+
+                    Edu<span class="text-indigo-600">
+                        Nova
+                    </span>
+
+                </span>
+
+            </a>
+
+
+            <!-- DESKTOP NAV -->
+
+            <div class="hidden md:flex
+                        items-center gap-8
+                        font-medium">
+
+                <a href="#home"
+                   class="text-indigo-600 hover:text-indigo-700">
+                    Home
+                </a>
+
+                <a href="#courses"
+                   class="hover:text-indigo-600 transition">
+                    Courses
+                </a>
+
+                <a href="#teachers"
+                   class="hover:text-indigo-600 transition">
+                    Teachers
+                </a>
+
+                <a href="#about"
+                   class="hover:text-indigo-600 transition">
+                    About
+                </a>
+
+                <a href="#contact"
+                   class="hover:text-indigo-600 transition">
+                    Contact
+                </a>
+
+            </div>
+
+
+            <!-- DESKTOP BUTTONS -->
+
+            <div class="hidden md:flex
+                        items-center gap-4">
+
+                <button
+                    onclick="openLogin()"
+                    class="font-semibold hover:text-indigo-600">
+
+                    Login
+
+                </button>
+
+
+                <a href="#courses"
+                   class="bg-slate-900
+                          text-white
+                          px-5 py-2.5
+                          rounded-xl
+                          font-semibold
+                          hover:bg-indigo-600
+                          transition">
+
+                    Get Started
+
+                </a>
+
+            </div>
+
+
+            <!-- MOBILE BUTTON -->
+
+            <button id="menuBtn"
+                    class="md:hidden text-xl">
+
+                <i id="menuIcon"
+                   class="fa-solid fa-bars"></i>
+
+            </button>
+
+        </div>
+
+
+        <!-- MOBILE MENU -->
+
+        <div id="mobileMenu"
+             class="hidden md:hidden
+                    px-6 pb-6">
+
+            <div class="flex flex-col
+                        gap-4 pt-3">
+
+                <a href="#home"
+                   onclick="closeMenu()">
+                    Home
+                </a>
+
+                <a href="#courses"
+                   onclick="closeMenu()">
+                    Courses
+                </a>
+
+                <a href="#teachers"
+                   onclick="closeMenu()">
+                    Teachers
+                </a>
+
+                <a href="#about"
+                   onclick="closeMenu()">
+                    About
+                </a>
+
+                <a href="#contact"
+                   onclick="closeMenu()">
+                    Contact
+                </a>
+
+                <button onclick="openLogin()"
+                        class="bg-indigo-600
+                               text-white
+                               py-3 rounded-xl">
+
+                    Login
+
+                </button>
+
+            </div>
+
+        </div>
+
+    </nav>
+
+</header>
+
+
+
+<!-- =====================================================
+                    HERO SECTION
+===================================================== -->
+
+<section id="home"
+         class="relative overflow-hidden
+                pt-36 pb-20">
+
+
+    <!-- Background blobs -->
+
+    <div class="absolute
+                w-72 h-72
+                bg-indigo-300/30
+                rounded-full
+                blur-3xl
+                -top-20 -left-20
+                animate-blob">
+    </div>
+
+
+    <div class="absolute
+                w-96 h-96
+                bg-violet-300/30
+                rounded-full
+                blur-3xl
+                right-0 top-40
+                animate-blob">
+    </div>
+
+
+    <div class="max-w-7xl mx-auto
+                px-6 relative">
+
+        <div class="grid lg:grid-cols-2
+                    gap-14 items-center">
+
+
+            <!-- LEFT -->
+
+            <div>
+
+
+                <div class="inline-flex
+                            items-center gap-2
+                            bg-indigo-50
+                            text-indigo-700
+                            px-4 py-2
+                            rounded-full
+                            text-sm
+                            font-semibold">
+
+                    <span class="w-2 h-2
+                                 bg-indigo-600
+                                 rounded-full">
+                    </span>
+
+                    Learn from industry experts
+
+                </div>
+
+
+                <h1 class="text-5xl md:text-7xl
+                           font-extrabold
+                           leading-tight
+                           mt-6">
+
+                    Learn Today,
+
+                    <span class="bg-gradient-to-r
+                                 from-indigo-600
+                                 to-violet-600
+                                 bg-clip-text
+                                 text-transparent">
+
+                        Build Tomorrow.
+
+                    </span>
+
+                </h1>
+
+
+                <p class="text-lg
+                          text-slate-600
+                          max-w-xl
+                          mt-6
+                          leading-8">
+
+                    Join our online coaching platform
+                    and learn practical skills from
+                    experienced teachers through
+                    live classes, projects and
+                    personalized mentorship.
+
+                </p>
+
+
+                <!-- BUTTONS -->
+
+                <div class="flex flex-wrap
+                            gap-4 mt-8">
+
+                    <a href="#courses"
+                       class="px-7 py-3.5
+                              bg-indigo-600
+                              text-white
+                              rounded-xl
+                              font-semibold
+                              shadow-xl
+                              shadow-indigo-200
+                              hover:bg-indigo-700
+                              hover:-translate-y-1
+                              transition">
+
+                        Explore Courses
+
+                        <i class="fa-solid
+                                  fa-arrow-right ml-2">
+                        </i>
+
+                    </a>
+
+
+                    <button onclick="showVideo()"
+                            class="px-7 py-3.5
+                                   bg-white
+                                   border border-slate-200
+                                   rounded-xl
+                                   font-semibold
+                                   hover:border-indigo-400
+                                   transition">
+
+                        <i class="fa-solid
+                                  fa-play
+                                  text-indigo-600 mr-2">
+                        </i>
+
+                        Watch Demo
+
+                    </button>
+
+                </div>
+
+
+                <!-- TRUST -->
+
+                <div class="flex items-center
+                            gap-4 mt-9">
+
+                    <div class="flex -space-x-3">
+
+                        <div class="w-10 h-10
+                                    rounded-full
+                                    bg-indigo-200
+                                    border-2 border-white
+                                    flex items-center
+                                    justify-center">
+                            👩
+                        </div>
+
+                        <div class="w-10 h-10
+                                    rounded-full
+                                    bg-violet-200
+                                    border-2 border-white
+                                    flex items-center
+                                    justify-center">
+                            👨
+                        </div>
+
+                        <div class="w-10 h-10
+                                    rounded-full
+                                    bg-pink-200
+                                    border-2 border-white
+                                    flex items-center
+                                    justify-center">
+                            👩‍💻
+                        </div>
+
+                    </div>
+
+
+                    <div>
+
+                        <div class="text-yellow-400
+                                    text-sm">
+
+                            ★ ★ ★ ★ ★
+
+                        </div>
+
+                        <p class="text-sm
+                                  text-slate-500">
+
+                            Trusted by 10,000+ students
+
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- RIGHT HERO CARD -->
+
+            <div class="relative">
+
+
+                <div class="absolute
+                            -top-8 -right-8
+                            w-32 h-32
+                            bg-indigo-200
+                            rounded-full
+                            blur-2xl">
+                </div>
+
+
+                <div class="relative
+                            bg-white
+                            rounded-[2rem]
+                            p-5
+                            shadow-2xl
+                            border border-slate-100
+                            animate-float">
+
+
+                    <div class="rounded-3xl
+                                bg-gradient-to-br
+                                from-indigo-600
+                                via-violet-600
+                                to-purple-700
+                                p-8
+                                text-white">
+
+
+                        <div class="flex
+                                    justify-between
+                                    items-center">
+
+                            <span class="text-sm
+                                         text-indigo-100">
+
+                                TODAY'S CLASS
+
+                            </span>
+
+
+                            <span class="bg-white/20
+                                         px-3 py-1
+                                         rounded-full
+                                         text-xs">
+
+                                LIVE
+
+                            </span>
+
+                        </div>
+
+
+                        <div class="mt-16">
+
+
+                            <div class="w-16 h-16
+                                        rounded-2xl
+                                        bg-white/20
+                                        flex items-center
+                                        justify-center
+                                        text-3xl">
+
+                                <i class="fa-solid fa-code"></i>
+
+                            </div>
+
+
+                            <h2 class="text-3xl
+                                       font-bold mt-6">
+
+                                Full Stack
+                                Development
+
+                            </h2>
+
+
+                            <p class="text-indigo-100 mt-2">
+
+                                Learn. Build. Get Hired.
+
+                            </p>
+
+                        </div>
+
+
+                        <!-- PROGRESS -->
+
+                        <div class="mt-10
+                                    bg-white/10
+                                    rounded-2xl
+                                    p-4">
+
+                            <div class="flex
+                                        justify-between
+                                        text-sm">
+
+                                <span>
+                                    Course Progress
+                                </span>
+
+                                <span>
+                                    72%
+                                </span>
+
+                            </div>
+
+
+                            <div class="w-full h-2
+                                        bg-white/20
+                                        rounded-full mt-2">
+
+                                <div class="w-[72%]
+                                            h-full
+                                            bg-white
+                                            rounded-full">
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- FLOATING CARD -->
+
+                <div class="absolute
+                            -left-8 bottom-10
+                            bg-white
+                            rounded-2xl
+                            shadow-xl
+                            p-4
+                            border border-slate-100">
+
+                    <div class="flex
+                                items-center gap-3">
+
+                        <div class="w-11 h-11
+                                    bg-green-100
+                                    text-green-600
+                                    rounded-xl
+                                    flex items-center
+                                    justify-center">
+
+                            <i class="fa-solid fa-check"></i>
+
+                        </div>
+
+
+                        <div>
+
+                            <p class="font-bold">
+                                Course Completed
+                            </p>
+
+                            <p class="text-xs
+                                      text-slate-500">
+
+                                Congratulations! 🎉
+
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+                    STATS
+===================================================== -->
+
+<section class="py-12">
+
+    <div class="max-w-6xl mx-auto
+                px-6">
+
+        <div class="grid grid-cols-2
+                    md:grid-cols-4
+                    gap-5">
+
+
+            <div class="bg-white
+                        rounded-2xl
+                        p-6
+                        text-center
+                        shadow-sm">
+
+                <h2 class="text-3xl
+                           font-extrabold
+                           text-indigo-600">
+
+                    10K+
+
+                </h2>
+
+                <p class="text-slate-500 mt-1">
+                    Active Students
+                </p>
+
+            </div>
+
+
+            <div class="bg-white
+                        rounded-2xl
+                        p-6
+                        text-center
+                        shadow-sm">
+
+                <h2 class="text-3xl
+                           font-extrabold
+                           text-violet-600">
+
+                    50+
+
+                </h2>
+
+                <p class="text-slate-500 mt-1">
+                    Expert Courses
+                </p>
+
+            </div>
+
+
+            <div class="bg-white
+                        rounded-2xl
+                        p-6
+                        text-center
+                        shadow-sm">
+
+                <h2 class="text-3xl
+                           font-extrabold
+                           text-pink-600">
+
+                    30+
+
+                </h2>
+
+                <p class="text-slate-500 mt-1">
+                    Expert Teachers
+                </p>
+
+            </div>
+
+
+            <div class="bg-white
+                        rounded-2xl
+                        p-6
+                        text-center
+                        shadow-sm">
+
+                <h2 class="text-3xl
+                           font-extrabold
+                           text-emerald-600">
+
+                    95%
+
+                </h2>
+
+                <p class="text-slate-500 mt-1">
+                    Success Rate
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+                    COURSES
+===================================================== -->
+
+<section id="courses"
+         class="py-24">
+
+    <div class="max-w-7xl mx-auto
+                px-6">
+
+
+        <div class="text-center
+                    max-w-2xl
+                    mx-auto">
+
+            <span class="text-indigo-600
+                         font-bold text-sm">
+
+                POPULAR COURSES
+
+            </span>
+
+
+            <h2 class="text-4xl md:text-5xl
+                       font-extrabold mt-3">
+
+                Learn Skills That
+
+                <span class="text-indigo-600">
+                    Matter
+                </span>
+
+            </h2>
+
+
+            <p class="text-slate-500 mt-4">
+
+                Career-focused courses designed
+                to help you learn faster.
+
+            </p>
+
+        </div>
+
+
+
+        <div class="grid md:grid-cols-2
+                    lg:grid-cols-3
+                    gap-7 mt-14">
+
+
+            <!-- COURSE 1 -->
+
+            <div class="group bg-white
+                        rounded-3xl
+                        overflow-hidden
+                        border border-slate-100
+                        shadow-sm
+                        hover:shadow-2xl
+                        transition">
+
+                <div class="h-48
+                            bg-gradient-to-br
+                            from-indigo-500
+                            to-violet-600
+                            p-7 text-white">
+
+                    <span class="bg-white/20
+                                 px-3 py-1
+                                 rounded-full
+                                 text-xs">
+
+                        Bestseller
+
+                    </span>
+
+
+                    <div class="mt-8">
+
+                        <i class="fa-solid fa-code
+                                  text-5xl">
+                        </i>
+
+                    </div>
+
+                </div>
+
+
+                <div class="p-7">
+
+
+                    <div class="flex
+                                justify-between">
+
+                        <span class="text-xs
+                                     bg-indigo-50
+                                     text-indigo-600
+                                     px-3 py-1
+                                     rounded-full">
+
+                            Development
+
+                        </span>
+
+
+                        <span class="text-yellow-500">
+                            ★ 4.9
+                        </span>
+
+                    </div>
+
+
+                    <h3 class="text-2xl
+                               font-bold mt-4">
+
+                        Full Stack
+                        Development
+
+                    </h3>
+
+
+                    <p class="text-slate-500 mt-3">
+
+                        Master frontend, backend,
+                        databases and APIs.
+
+                    </p>
+
+
+                    <div class="flex gap-5
+                                text-sm
+                                text-slate-500
+                                mt-5">
+
+                        <span>
+                            <i class="fa-regular fa-clock"></i>
+                            12 Weeks
+                        </span>
+
+                        <span>
+                            <i class="fa-solid fa-video"></i>
+                            60 Lessons
+                        </span>
+
+                    </div>
+
+
+                    <div class="flex
+                                justify-between
+                                items-center
+                                mt-7">
+
+                        <div>
+
+                            <span class="text-2xl
+                                         font-bold">
+
+                                ₹2,999
+
+                            </span>
+
+
+                            <span class="text-sm
+                                         text-slate-400
+                                         line-through ml-2">
+
+                                ₹5,999
+
+                            </span>
+
+                        </div>
+
+
+                        <button onclick="enroll('Full Stack Development')"
+                                class="w-11 h-11
+                                       rounded-xl
+                                       bg-indigo-50
+                                       text-indigo-600
+                                       flex items-center
+                                       justify-center
+                                       group-hover:bg-indigo-600
+                                       group-hover:text-white
+                                       transition">
+
+                            <i class="fa-solid
+                                      fa-arrow-right">
+                            </i>
+
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- COURSE 2 -->
+
+            <div class="group bg-white
+                        rounded-3xl
+                        overflow-hidden
+                        border border-slate-100
+                        shadow-sm
+                        hover:shadow-2xl
+                        transition">
+
+
+                <div class="h-48
+                            bg-gradient-to-br
+                            from-violet-500
+                            to-fuchsia-600
+                            p-7 text-white">
+
+                    <div class="mt-8">
+
+                        <i class="fa-solid fa-brain
+                                  text-5xl">
+                        </i>
+
+                    </div>
+
+                </div>
+
+
+                <div class="p-7">
+
+
+                    <div class="flex
+                                justify-between">
+
+                        <span class="text-xs
+                                     bg-violet-50
+                                     text-violet-600
+                                     px-3 py-1
+                                     rounded-full">
+
+                            AI & Data
+
+                        </span>
+
+
+                        <span class="text-yellow-500">
+                            ★ 4.8
+                        </span>
+
+                    </div>
+
+
+                    <h3 class="text-2xl
+                               font-bold mt-4">
+
+                        Data Science & AI
+
+                    </h3>
+
+
+                    <p class="text-slate-500 mt-3">
+
+                        Learn Python, machine learning,
+                        AI and data analytics.
+
+                    </p>
+
+
+                    <div class="flex gap-5
+                                text-sm
+                                text-slate-500 mt-5">
+
+                        <span>
+                            <i class="fa-regular fa-clock"></i>
+                            16 Weeks
+                        </span>
+
+                        <span>
+                            <i class="fa-solid fa-video"></i>
+                            80 Lessons
+                        </span>
+
+                    </div>
+
+
+                    <div class="flex
+                                justify-between
+                                items-center
+                                mt-7">
+
+                        <span class="text-2xl
+                                     font-bold">
+
+                            ₹3,999
+
+                        </span>
+
+
+                        <button onclick="enroll('Data Science & AI')"
+                                class="w-11 h-11
+                                       rounded-xl
+                                       bg-violet-50
+                                       text-violet-600
+                                       flex items-center
+                                       justify-center
+                                       group-hover:bg-violet-600
+                                       group-hover:text-white">
+
+                            <i class="fa-solid
+                                      fa-arrow-right">
+                            </i>
+
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- COURSE 3 -->
+
+            <div class="group bg-white
+                        rounded-3xl
+                        overflow-hidden
+                        border border-slate-100
+                        shadow-sm
+                        hover:shadow-2xl
+                        transition">
+
+
+                <div class="h-48
+                            bg-gradient-to-br
+                            from-pink-500
+                            to-rose-600
+                            p-7 text-white">
+
+                    <div class="mt-8">
+
+                        <i class="fa-solid
+                                  fa-mobile-screen
+                                  text-5xl">
+                        </i>
+
+                    </div>
+
+                </div>
+
+
+                <div class="p-7">
+
+
+                    <div class="flex
+                                justify-between">
+
+                        <span class="text-xs
+                                     bg-pink-50
+                                     text-pink-600
+                                     px-3 py-1
+                                     rounded-full">
+
+                            Mobile
+
+                        </span>
+
+
+                        <span class="text-yellow-500">
+                            ★ 4.9
+                        </span>
+
+                    </div>
+
+
+                    <h3 class="text-2xl
+                               font-bold mt-4">
+
+                        App Development
+
+                    </h3>
+
+
+                    <p class="text-slate-500 mt-3">
+
+                        Build modern Android and
+                        React Native applications.
+
+                    </p>
+
+
+                    <div class="flex gap-5
+                                text-sm
+                                text-slate-500 mt-5">
+
+                        <span>
+                            <i class="fa-regular fa-clock"></i>
+                            10 Weeks
+                        </span>
+
+                        <span>
+                            <i class="fa-solid fa-video"></i>
+                            50 Lessons
+                        </span>
+
+                    </div>
+
+
+                    <div class="flex
+                                justify-between
+                                items-center
+                                mt-7">
+
+                        <span class="text-2xl
+                                     font-bold">
+
+                            ₹3,499
+
+                        </span>
+
+
+                        <button onclick="enroll('App Development')"
+                                class="w-11 h-11
+                                       rounded-xl
+                                       bg-pink-50
+                                       text-pink-600
+                                       flex items-center
+                                       justify-center
+                                       group-hover:bg-pink-600
+                                       group-hover:text-white">
+
+                            <i class="fa-solid
+                                      fa-arrow-right">
+                            </i>
+
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+        </div>
+
+
+        <div class="text-center mt-10">
+
+            <button onclick="showAllCourses()"
+                    class="border-2
+                           border-indigo-600
+                           text-indigo-600
+                           px-7 py-3
+                           rounded-xl
+                           font-semibold
+                           hover:bg-indigo-600
+                           hover:text-white
+                           transition">
+
+                View All Courses
+
+                <i class="fa-solid
+                          fa-arrow-right ml-2">
+                </i>
+
+            </button>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+                    TEACHERS
+===================================================== -->
+
+<section id="teachers"
+         class="py-24 bg-white">
+
+    <div class="max-w-7xl mx-auto
+                px-6">
+
+
+        <div class="text-center">
+
+            <span class="text-indigo-600
+                         font-bold text-sm">
+
+                OUR MENTORS
+
+            </span>
+
+
+            <h2 class="text-4xl
+                       md:text-5xl
+                       font-extrabold mt-3">
+
+                Learn From Experts
+
+            </h2>
+
+
+            <p class="text-slate-500 mt-4">
+
+                Meet our experienced instructors.
+
+            </p>
+
+        </div>
+
+
+        <div class="grid md:grid-cols-3
+                    gap-7 mt-12">
+
+
+            <!-- Teacher -->
+
+            <div class="bg-slate-50
+                        rounded-3xl
+                        p-8 text-center
+                        hover:shadow-xl
+                        transition">
+
+                <div class="w-24 h-24
+                            mx-auto
+                            rounded-full
+                            bg-gradient-to-br
+                            from-indigo-500
+                            to-violet-600
+                            text-white
+                            flex items-center
+                            justify-center
+                            text-3xl">
+
+                    👨‍💻
+
+                </div>
+
+
+                <h3 class="text-xl
+                           font-bold mt-5">
+
+                    Arjun Mehta
+
+                </h3>
+
+
+                <p class="text-indigo-600
+                          text-sm mt-1">
+
+                    Full Stack Developer
+
+                </p>
+
+
+                <p class="text-slate-500
+                          text-sm mt-4">
+
+                    8+ years of industry
+                    experience.
+
+                </p>
+
+
+                <div class="flex justify-center
+                            gap-4 mt-5
+                            text-slate-400">
+
+                    <i class="fa-brands fa-linkedin"></i>
+                    <i class="fa-brands fa-github"></i>
+                    <i class="fa-brands fa-twitter"></i>
+
+                </div>
+
+            </div>
+
+
+            <div class="bg-slate-50
+                        rounded-3xl
+                        p-8 text-center
+                        hover:shadow-xl
+                        transition">
+
+                <div class="w-24 h-24
+                            mx-auto
+                            rounded-full
+                            bg-gradient-to-br
+                            from-violet-500
+                            to-fuchsia-600
+                            text-white
+                            flex items-center
+                            justify-center
+                            text-3xl">
+
+                    👩‍💻
+
+                </div>
+
+
+                <h3 class="text-xl
+                           font-bold mt-5">
+
+                    Neha Sharma
+
+                </h3>
+
+
+                <p class="text-violet-600
+                          text-sm mt-1">
+
+                    Data Scientist
+
+                </p>
+
+
+                <p class="text-slate-500
+                          text-sm mt-4">
+
+                    7+ years of experience
+                    in AI and ML.
+
+                </p>
+
+
+                <div class="flex justify-center
+                            gap-4 mt-5
+                            text-slate-400">
+
+                    <i class="fa-brands fa-linkedin"></i>
+                    <i class="fa-brands fa-github"></i>
+                    <i class="fa-brands fa-twitter"></i>
+
+                </div>
+
+            </div>
+
+
+            <div class="bg-slate-50
+                        rounded-3xl
+                        p-8 text-center
+                        hover:shadow-xl
+                        transition">
+
+                <div class="w-24 h-24
+                            mx-auto
+                            rounded-full
+                            bg-gradient-to-br
+                            from-pink-500
+                            to-rose-600
+                            text-white
+                            flex items-center
+                            justify-center
+                            text-3xl">
+
+                    👨‍🏫
+
+                </div>
+
+
+                <h3 class="text-xl
+                           font-bold mt-5">
+
+                    Rohit Verma
+
+                </h3>
+
+
+                <p class="text-pink-600
+                          text-sm mt-1">
+
+                    App Developer
+
+                </p>
+
+
+                <p class="text-slate-500
+                          text-sm mt-4">
+
+                    6+ years building
+                    mobile applications.
+
+                </p>
+
+
+                <div class="flex justify-center
+                            gap-4 mt-5
+                            text-slate-400">
+
+                    <i class="fa-brands fa-linkedin"></i>
+                    <i class="fa-brands fa-github"></i>
+                    <i class="fa-brands fa-twitter"></i>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+                    ABOUT
+===================================================== -->
+
+<section id="about"
+         class="py-24">
+
+    <div class="max-w-7xl mx-auto
+                px-6">
+
+        <div class="grid lg:grid-cols-2
+                    gap-16 items-center">
+
+
+            <div>
+
+                <span class="text-indigo-600
+                             font-bold text-sm">
+
+                    WHY EDUNOVA?
+
+                </span>
+
+
+                <h2 class="text-4xl md:text-5xl
+                           font-extrabold mt-3">
+
+                    Education That
+                    Prepares You For
+                    The Real World
+
+                </h2>
+
+
+                <p class="text-slate-500
+                          leading-7 mt-6">
+
+                    EduNova is an online coaching platform
+                    focused on practical learning. Our
+                    courses combine expert teaching,
+                    hands-on projects and personalized
+                    mentorship.
+
+                </p>
+
+
+                <div class="grid sm:grid-cols-2
+                            gap-5 mt-8">
+
+
+                    <div class="p-5
+                                bg-indigo-50
+                                rounded-2xl">
+
+                        <div class="w-12 h-12
+                                    bg-indigo-600
+                                    text-white
+                                    rounded-xl
+                                    flex items-center
+                                    justify-center">
+
+                            <i class="fa-solid fa-video"></i>
+
+                        </div>
+
+
+                        <h3 class="font-bold
+                                   text-lg mt-4">
+
+                            Live Classes
+
+                        </h3>
+
+
+                        <p class="text-sm
+                                  text-slate-500 mt-2">
+
+                            Interactive classes
+                            with experts.
+
+                        </p>
+
+                    </div>
+
+
+                    <div class="p-5
+                                bg-violet-50
+                                rounded-2xl">
+
+                        <div class="w-12 h-12
+                                    bg-violet-600
+                                    text-white
+                                    rounded-xl
+                                    flex items-center
+                                    justify-center">
+
+                            <i class="fa-solid
+                                      fa-project-diagram">
+                            </i>
+
+                        </div>
+
+
+                        <h3 class="font-bold
+                                   text-lg mt-4">
+
+                            Real Projects
+
+                        </h3>
+
+
+                        <p class="text-sm
+                                  text-slate-500 mt-2">
+
+                            Build projects for
+                            your portfolio.
+
+                        </p>
+
+                    </div>
+
+
+                    <div class="p-5
+                                bg-pink-50
+                                rounded-2xl">
+
+                        <div class="w-12 h-12
+                                    bg-pink-600
+                                    text-white
+                                    rounded-xl
+                                    flex items-center
+                                    justify-center">
+
+                            <i class="fa-solid
+                                      fa-user-tie">
+                            </i>
+
+                        </div>
+
+
+                        <h3 class="font-bold
+                                   text-lg mt-4">
+
+                            Expert Mentors
+
+                        </h3>
+
+
+                        <p class="text-sm
+                                  text-slate-500 mt-2">
+
+                            Learn from
+                            industry professionals.
+
+                        </p>
+
+                    </div>
+
+
+                    <div class="p-5
+                                bg-emerald-50
+                                rounded-2xl">
+
+                        <div class="w-12 h-12
+                                    bg-emerald-600
+                                    text-white
+                                    rounded-xl
+                                    flex items-center
+                                    justify-center">
+
+                            <i class="fa-solid
+                                      fa-headset">
+                            </i>
+
+                        </div>
+
+
+                        <h3 class="font-bold
+                                   text-lg mt-4">
+
+                            24/7 Support
+
+                        </h3>
+
+
+                        <p class="text-sm
+                                  text-slate-500 mt-2">
+
+                            Get help whenever
+                            you need it.
+
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- Dashboard -->
+
+            <div>
+
+                <div class="bg-gradient-to-br
+                            from-slate-900
+                            to-indigo-950
+                            rounded-[2rem]
+                            p-8 text-white">
+
+
+                    <div class="flex
+                                justify-between">
+
+                        <div>
+
+                            <p class="text-slate-400
+                                      text-sm">
+
+                                STUDENT DASHBOARD
+
+                            </p>
+
+
+                            <h3 class="text-3xl
+                                       font-bold mt-2">
+
+                                Welcome Back 👋
+
+                            </h3>
+
+                        </div>
+
+
+                        <div class="w-12 h-12
+                                    rounded-full
+                                    bg-indigo-500
+                                    flex items-center
+                                    justify-center">
+
+                            <i class="fa-solid fa-user"></i>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="grid grid-cols-2
+                                gap-4 mt-10">
+
+
+                        <div class="bg-white/10
+                                    rounded-2xl p-5">
+
+                            <p class="text-slate-400
+                                      text-sm">
+
+                                Courses
+
+                            </p>
+
+                            <p class="text-3xl
+                                      font-bold mt-2">
+
+                                08
+
+                            </p>
+
+                        </div>
+
+
+                        <div class="bg-white/10
+                                    rounded-2xl p-5">
+
+                            <p class="text-slate-400
+                                      text-sm">
+
+                                Completed
+
+                            </p>
+
+                            <p class="text-3xl
+                                      font-bold mt-2">
+
+                                05
+
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="mt-5
+                                bg-white/10
+                                rounded-2xl p-5">
+
+
+                        <div class="flex
+                                    justify-between">
+
+                            <span>
+                                Overall Progress
+                            </span>
+
+                            <span>
+                                78%
+                            </span>
+
+                        </div>
+
+
+                        <div class="h-2
+                                    bg-white/10
+                                    rounded-full mt-3">
+
+                            <div class="h-full
+                                        w-[78%]
+                                        bg-indigo-400
+                                        rounded-full">
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+                    TESTIMONIALS
+===================================================== -->
+
+<section class="py-24 bg-white">
+
+    <div class="max-w-7xl mx-auto
+                px-6">
+
+
+        <div class="text-center">
+
+            <span class="text-indigo-600
+                         font-bold text-sm">
+
+                STUDENT REVIEWS
+
+            </span>
+
+
+            <h2 class="text-4xl
+                       md:text-5xl
+                       font-extrabold mt-3">
+
+                What Students Say
+
+            </h2>
+
+        </div>
+
+
+        <div class="grid md:grid-cols-3
+                    gap-7 mt-12">
+
+
+            <div class="bg-slate-50
+                        p-7 rounded-3xl">
+
+                <div class="text-yellow-400">
+                    ★★★★★
+                </div>
+
+
+                <p class="text-slate-600
+                          mt-5 leading-7">
+
+                    "The classes are easy to
+                    understand and the projects
+                    helped me build a strong
+                    portfolio."
+
+                </p>
+
+
+                <div class="flex items-center
+                            gap-3 mt-6">
+
+                    <div class="w-11 h-11
+                                rounded-full
+                                bg-indigo-100
+                                flex items-center
+                                justify-center">
+
+                        A
+
+                    </div>
+
+
+                    <div>
+
+                        <h4 class="font-bold">
+                            Ananya Sharma
+                        </h4>
+
+                        <p class="text-xs
+                                  text-slate-400">
+
+                            Web Development
+
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <div class="bg-slate-50
+                        p-7 rounded-3xl">
+
+                <div class="text-yellow-400">
+                    ★★★★★
+                </div>
+
+
+                <p class="text-slate-600
+                          mt-5 leading-7">
+
+                    "Amazing mentors and excellent
+                    study material. Highly
+                    recommended!"
+
+                </p>
+
+
+                <div class="flex items-center
+                            gap-3 mt-6">
+
+                    <div class="w-11 h-11
+                                rounded-full
+                                bg-violet-100
+                                flex items-center
+                                justify-center">
+
+                        R
+
+                    </div>
+
+
+                    <div>
+
+                        <h4 class="font-bold">
+                            Rahul Verma
+                        </h4>
+
+                        <p class="text-xs
+                                  text-slate-400">
+
+                            Data Science
+
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <div class="bg-slate-50
+                        p-7 rounded-3xl">
+
+                <div class="text-yellow-400">
+                    ★★★★★
+                </div>
+
+
+                <p class="text-slate-600
+                          mt-5 leading-7">
+
+                    "Live classes and doubt
+                    support made learning
+                    much easier."
+
+                </p>
+
+
+                <div class="flex items-center
+                            gap-3 mt-6">
+
+                    <div class="w-11 h-11
+                                rounded-full
+                                bg-pink-100
+                                flex items-center
+                                justify-center">
+
+                        P
+
+                    </div>
+
+
+                    <div>
+
+                        <h4 class="font-bold">
+                            Priya Singh
+                        </h4>
+
+                        <p class="text-xs
+                                  text-slate-400">
+
+                            App Development
+
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+                    CONTACT
+===================================================== -->
+
+<section id="contact"
+         class="py-24">
+
+    <div class="max-w-6xl mx-auto
+                px-6">
+
+
+        <div class="rounded-[2rem]
+                    bg-gradient-to-r
+                    from-indigo-600
+                    to-violet-600
+                    text-white
+                    p-10 md:p-16">
+
+
+            <div class="grid md:grid-cols-2
+                        gap-10 items-center">
+
+
+                <div>
+
+                    <span class="text-indigo-200
+                                 font-bold text-sm">
+
+                        GET STARTED
+
+                    </span>
+
+
+                    <h2 class="text-4xl
+                               md:text-5xl
+                               font-extrabold mt-3">
+
+                        Ready To Start
+                        Learning?
+
+                    </h2>
+
+
+                    <p class="text-indigo-100
+                              mt-5 leading-7">
+
+                        Join thousands of students
+                        and start building skills
+                        for your future.
+
+                    </p>
+
+
+                    <a href="#courses"
+                       class="inline-block
+                              mt-7
+                              bg-white
+                              text-indigo-600
+                              px-7 py-3.5
+                              rounded-xl
+                              font-bold">
+
+                        Explore Courses
+
+                    </a>
+
+                </div>
+
+
+                <div class="bg-white/10
+                            rounded-3xl p-7">
+
+
+                    <h3 class="text-xl
+                               font-bold">
+
+                        Contact Us
+
+                    </h3>
+
+
+                    <div class="space-y-5 mt-6">
+
+
+                        <div class="flex
+                                    items-center gap-4">
+
+                            <div class="w-11 h-11
+                                        bg-white/10
+                                        rounded-xl
+                                        flex items-center
+                                        justify-center">
+
+                                <i class="fa-solid
+                                          fa-envelope">
+                                </i>
+
+                            </div>
+
+
+                            <div>
+
+                                <p class="text-xs
+                                          text-indigo-200">
+
+                                    Email
+
+                                </p>
+
+                                <p>
+                                    hello@edunova.com
+                                </p>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="flex
+                                    items-center gap-4">
+
+                            <div class="w-11 h-11
+                                        bg-white/10
+                                        rounded-xl
+                                        flex items-center
+                                        justify-center">
+
+                                <i class="fa-solid
+                                          fa-phone">
+                                </i>
+
+                            </div>
+
+
+                            <div>
+
+                                <p class="text-xs
+                                          text-indigo-200">
+
+                                    Phone
+
+                                </p>
+
+                                <p>
+                                    +91 98765 43210
+                                </p>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="flex
+                                    items-center gap-4">
+
+                            <div class="w-11 h-11
+                                        bg-white/10
+                                        rounded-xl
+                                        flex items-center
+                                        justify-center">
+
+                                <i class="fa-solid
+                                          fa-location-dot">
+                                </i>
+
+                            </div>
+
+
+                            <div>
+
+                                <p class="text-xs
+                                          text-indigo-200">
+
+                                    Location
+
+                                </p>
+
+                                <p>
+                                    New Delhi, India
+                                </p>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+                    FOOTER
+===================================================== -->
+
+<footer class="bg-slate-950
+               text-slate-400">
+
+
+    <div class="max-w-7xl mx-auto
+                px-6 py-14
+                grid md:grid-cols-4
+                gap-10">
+
+
+        <!-- BRAND -->
+
+        <div>
+
+            <div class="flex
+                        items-center gap-3">
+
+                <div class="w-10 h-10
+                            bg-indigo-600
+                            rounded-xl
+                            text-white
+                            flex items-center
+                            justify-center">
+
+                    <i class="fa-solid
+                              fa-graduation-cap">
+                    </i>
+
+                </div>
+
+
+                <span class="text-xl
+                             font-bold
+                             text-white">
+
+                    EduNova
+
+                </span>
+
+            </div>
+
+
+            <p class="mt-5 leading-7">
+
+                Empowering students with
+                practical skills and quality
+                online education.
+
+            </p>
+
+        </div>
+
+
+        <!-- LINKS -->
+
+        <div>
+
+            <h3 class="text-white
+                       font-bold mb-5">
+
+                Quick Links
+
+            </h3>
+
+
+            <div class="space-y-3">
+
+                <a href="#home"
+                   class="block hover:text-white">
+                    Home
+                </a>
+
+                <a href="#courses"
+                   class="block hover:text-white">
+                    Courses
+                </a>
+
+                <a href="#teachers"
+                   class="block hover:text-white">
+                    Teachers
+                </a>
+
+                <a href="#about"
+                   class="block hover:text-white">
+                    About
+                </a>
+
+                <a href="#contact"
+                   class="block hover:text-white">
+                    Contact
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <!-- COURSES -->
+
+        <div>
+
+            <h3 class="text-white
+                       font-bold mb-5">
+
+                Popular Courses
+
+            </h3>
+
+
+            <div class="space-y-3">
+
+                <p>Web Development</p>
+
+                <p>Data Science</p>
+
+                <p>App Development</p>
+
+                <p>UI/UX Design</p>
+
+                <p>Cloud Computing</p>
+
+            </div>
+
+        </div>
+
+
+        <!-- SOCIAL -->
+
+        <div>
+
+            <h3 class="text-white
+                       font-bold mb-5">
+
+                Follow Us
+
+            </h3>
+
+
+            <div class="flex gap-3">
+
+
+                <a href="#"
+                   class="w-11 h-11
+                          rounded-xl
+                          bg-white/5
+                          flex items-center
+                          justify-center
+                          hover:bg-pink-600
+                          hover:text-white
+                          transition">
+
+                    <i class="fa-brands
+                              fa-instagram">
+                    </i>
+
+                </a>
+
+
+                <a href="#"
+                   class="w-11 h-11
+                          rounded-xl
+                          bg-white/5
+                          flex items-center
+                          justify-center
+                          hover:bg-blue-600
+                          hover:text-white
+                          transition">
+
+                    <i class="fa-brands
+                              fa-facebook">
+                    </i>
+
+                </a>
+
+
+                <a href="#"
+                   class="w-11 h-11
+                          rounded-xl
+                          bg-white/5
+                          flex items-center
+                          justify-center
+                          hover:bg-red-600
+                          hover:text-white
+                          transition">
+
+                    <i class="fa-brands
+                              fa-youtube">
+                    </i>
+
+                </a>
+
+
+                <a href="#"
+                   class="w-11 h-11
+                          rounded-xl
+                          bg-white/5
+                          flex items-center
+                          justify-center
+                          hover:bg-blue-500
+                          hover:text-white
+                          transition">
+
+                    <i class="fa-brands
+                              fa-linkedin">
+                    </i>
+
+                </a>
+
+
+                <a href="#"
+                   class="w-11 h-11
+                          rounded-xl
+                          bg-white/5
+                          flex items-center
+                          justify-center
+                          hover:bg-sky-500
+                          hover:text-white
+                          transition">
+
+                    <i class="fa-brands
+                              fa-twitter">
+                    </i>
+
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- COPYRIGHT -->
+
+    <div class="border-t
+                border-white/10">
+
+        <div class="max-w-7xl mx-auto
+                    px-6 py-6
+                    text-center text-sm">
+
+            © 2026 EduNova.
+            All Rights Reserved.
+
+        </div>
+
+    </div>
+
+</footer>
+
+
+
+<!-- =====================================================
+                    LOGIN MODAL
+===================================================== -->
+
+<div id="loginModal"
+     class="hidden fixed inset-0
+            bg-black/60 backdrop-blur-sm
+            z-[100]
+            items-center
+            justify-center
+            px-5">
+
+
+    <div class="bg-white
+                rounded-3xl
+                p-8
+                w-full max-w-md
+                shadow-2xl
+                relative">
+
+
+        <button onclick="closeLogin()"
+                class="absolute
+                       right-5 top-5
+                       text-slate-400
+                       hover:text-slate-800">
+
+            <i class="fa-solid fa-xmark"></i>
+
+        </button>
+
+
+        <div class="text-center">
+
+            <div class="w-16 h-16
+                        mx-auto
+                        rounded-2xl
+                        bg-indigo-100
+                        text-indigo-600
+                        flex items-center
+                        justify-center
+                        text-2xl">
+
+                <i class="fa-solid
+                          fa-user">
+                </i>
+
+            </div>
+
+
+            <h2 class="text-3xl
+                       font-bold mt-5">
+
+                Welcome Back
+
+            </h2>
+
+
+            <p class="text-slate-500 mt-2">
+
+                Login to continue learning
+
+            </p>
+
+        </div>
+
+
+        <form class="mt-7"
+              onsubmit="loginUser(event)">
+
+
+            <label class="font-semibold">
+                Email
+            </label>
+
+
+            <input type="email"
+                   id="email"
+                   required
+                   placeholder="Enter your email"
+                   class="w-full
+                          border border-slate-200
+                          rounded-xl
+                          px-4 py-3
+                          mt-2 mb-5
+                          outline-none
+                          focus:ring-2
+                          focus:ring-indigo-500">
+
+
+            <label class="font-semibold">
+                Password
+            </label>
+
+
+            <input type="password"
+                   id="password"
+                   required
+                   placeholder="Enter password"
+                   class="w-full
+                          border border-slate-200
+                          rounded-xl
+                          px-4 py-3
+                          mt-2 mb-6
+                          outline-none
+                          focus:ring-2
+                          focus:ring-indigo-500">
+
+
+            <button type="submit"
+                    class="w-full
+                           bg-indigo-600
+                           text-white
+                           py-3
+                           rounded-xl
+                           font-semibold
+                           hover:bg-indigo-700">
+
+                Login
+
+            </button>
+
+        </form>
+
+
+        <p class="text-center
+                  text-sm
+                  text-slate-500
+                  mt-5">
+
+            Don't have an account?
+
+            <span class="text-indigo-600
+                         font-semibold
+                         cursor-pointer">
+
+                Register
+
+            </span>
+
+        </p>
+
+    </div>
+
+</div>
+
+
+
+<!-- =====================================================
+                    VIDEO MODAL
+===================================================== -->
+
+<div id="videoModal"
+     class="hidden fixed inset-0
+            bg-black/70
+            z-[100]
+            items-center
+            justify-center
+            px-5">
+
+
+    <div class="bg-white
+                rounded-3xl
+                p-6
+                max-w-2xl
+                w-full
+                text-center
+                relative">
+
+
+        <button onclick="closeVideo()"
+                class="absolute
+                       right-5 top-5
+                       text-slate-400
+                       text-xl">
+
+            <i class="fa-solid fa-xmark"></i>
+
+        </button>
+
+
+        <div class="bg-slate-900
+                    rounded-2xl
+                    h-72
+                    flex items-center
+                    justify-center
+                    text-white">
+
+            <div>
+
+                <i class="fa-solid
+                          fa-circle-play
+                          text-6xl
+                          text-indigo-400">
+                </i>
+
+                <p class="mt-4">
+                    Course Demo Video
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <h2 class="text-2xl
+                   font-bold mt-5">
+
+            Welcome to EduNova
+
+        </h2>
+
+
+        <p class="text-slate-500 mt-2">
+
+            Start learning with our
+            expert instructors.
+
+        </p>
+
+    </div>
+
+</div>
+
+
+
+<!-- =====================================================
+                    JAVASCRIPT
+===================================================== -->
+
+<script>
+
+
+/* ================= MOBILE MENU ================= */
+
+const menuBtn =
+    document.getElementById("menuBtn");
+
+const mobileMenu =
+    document.getElementById("mobileMenu");
+
+const menuIcon =
+    document.getElementById("menuIcon");
+
+
+menuBtn.addEventListener("click", function () {
+
+    mobileMenu.classList.toggle("hidden");
+
+
+    if (mobileMenu.classList.contains("hidden")) {
+
+        menuIcon.classList.remove("fa-xmark");
+
+        menuIcon.classList.add("fa-bars");
+
+    } else {
+
+        menuIcon.classList.remove("fa-bars");
+
+        menuIcon.classList.add("fa-xmark");
+
+    }
+
+});
+
+
+function closeMenu() {
+
+    mobileMenu.classList.add("hidden");
+
+    menuIcon.classList.remove("fa-xmark");
+
+    menuIcon.classList.add("fa-bars");
+
+}
+
+
+
+/* ================= LOGIN ================= */
+
+function openLogin() {
+
+    const modal =
+        document.getElementById("loginModal");
+
+    modal.classList.remove("hidden");
+
+    modal.classList.add("flex");
+
+}
+
+
+function closeLogin() {
+
+    const modal =
+        document.getElementById("loginModal");
+
+    modal.classList.add("hidden");
+
+    modal.classList.remove("flex");
+
+}
+
+
+function loginUser(event) {
+
+    event.preventDefault();
+
+    const email =
+        document.getElementById("email").value;
+
+    alert(
+        "Welcome to EduNova!\n\nLogged in as: "
+        + email
+    );
+
+    closeLogin();
+
+}
+
+
+
+/* ================= ENROLL ================= */
+
+function enroll(courseName) {
+
+    alert(
+        "Great choice! 🎉\n\n" +
+        "You selected:\n" +
+        courseName +
+        "\n\nOur team will contact you soon."
+    );
+
+}
+
+
+
+/* ================= ALL COURSES ================= */
+
+function showAllCourses() {
+
+    alert(
+        "More courses coming soon! 🚀\n\n" +
+        "We are preparing new career-focused courses."
+    );
+
+}
+
+
+
+/* ================= VIDEO ================= */
+
+function showVideo() {
+
+    const modal =
+        document.getElementById("videoModal");
+
+    modal.classList.remove("hidden");
+
+    modal.classList.add("flex");
+
+}
+
+
+function closeVideo() {
+
+    const modal =
+        document.getElementById("videoModal");
+
+    modal.classList.add("hidden");
+
+    modal.classList.remove("flex");
+
+}
+
+
+
+/* ================= CLOSE MODAL ON OUTSIDE CLICK ================= */
+
+document
+    .getElementById("loginModal")
+    .addEventListener("click", function (event) {
+
+        if (event.target === this) {
+
+            closeLogin();
+
+        }
+
+    });
+
+
+document
+    .getElementById("videoModal")
+    .addEventListener("click", function (event) {
+
+        if (event.target === this) {
+
+            closeVideo();
+
+        }
+
+    });
+
+
+</script>
+
+</body>
+</html>

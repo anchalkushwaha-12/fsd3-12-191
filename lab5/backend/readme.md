@@ -113,3 +113,5 @@ We learned how to:
 5. Create a GET route
 6. Run the server on a port
 7. Open the server in a browser
+express support midle when we are excute same function before server  excution
+aap.use always apply to any middle use
