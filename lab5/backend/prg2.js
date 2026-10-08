@@ -1,9 +1,29 @@
 import express from "express";
-const app =express();
-import {fileURLToPath} from "node:url";
-const app=express()
-const filename=fileURLToPath(import.meta.url);
-const dirname=path.dirname(filename);
-app.get("/",(req,res)=>{ });
 
-app.listen(4444,()=>console.log("prg2 is runing"));
+const app = express();
+
+app.get("/", (req, res) => {
+  //   res.send("Hello Express");
+  //   res.send("<h1>Hello Express</h1>");
+  res.send(`
+    <h1>Hello Server</h1>
+    <h2>I am responding from express framework</h2>
+    <h3> The code is minimal and easy to return </h3>
+    `);
+});
+
+app.get("/about", (req, res) => {
+  res.send("<h2>About page</h2>");
+});
+
+app.get("/products", (req, res) => {
+  const product = {
+    id: 1,
+    name: "Mobile",
+    price: 25000,
+  };
+  res.send(product);
+});
+
+// this line must be last line 👇
+app.listen(4444, () => console.log("prg1 is running at 4444"));
