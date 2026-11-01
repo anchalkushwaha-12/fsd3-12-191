@@ -39,7 +39,7 @@ const server = http.createServer((req, res) => {
         res.end(JSON.stringify({ msg: "User not found" }));
       } else res.end(JSON.stringify(userUpdated));
     });
-  } else if (req.url.startsWith("/api/users/") && req.method === "DELETE") {
+  } else if (req.url.startsWith("/api/users/") &&   req.method === "DELETE") {
     const userId = Number(req.url.split("/").pop());
     const isDeleted = deleteUser(userId);
     if (!isDeleted) {
